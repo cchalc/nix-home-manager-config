@@ -34,5 +34,6 @@ let
     wasmer
     cue
     go
+    exa
   ];
 in homePackages ++ gitTools ++ nixTools
