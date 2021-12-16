@@ -51,8 +51,8 @@ in {
   };
 
   home = {
-    username = "lucperkins";
-    homeDirectory = "/Users/lucperkins";
+    username = "cchalc";
+    homeDirectory = "/Users/christopher.chalcraft";
     packages = allPackages;
     sessionVariables = {
       EDITOR = "nvim";
