@@ -14,7 +14,7 @@ let
   '';
 
   build-push = writeScriptBin "build-push" ''
-    nix-build '<nixpkgs>' -A $1 | cachix push lucperkins-dev && rm result
+    nix-build '<nixpkgs>' -A $1 | cachix push cchalc-dev && rm result
   '';
 
   run = writeScriptBin "run" ''
