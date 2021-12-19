@@ -35,5 +35,6 @@ let
     cue
     go
     exa
+    python38Full
   ];
 in homePackages ++ gitTools ++ nixTools

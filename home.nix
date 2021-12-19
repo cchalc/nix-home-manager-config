@@ -25,11 +25,6 @@ in {
       path = "…";
     };
 
-    exa = {
-      enable = true;
-      enableAliases = true;
-    };
-
     neovim = import ./neovim.nix { vimPlugins = pkgs.vimPlugins; };
 
     starship = import ./starship.nix;
