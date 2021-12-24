@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   nigpkgsRev = "21.11-pre";
@@ -19,7 +19,7 @@ in {
       enable = true;
       enableFishIntegration = true;
     };
-    
+
     home-manager = {
       enable = true;
       path = "…";
@@ -43,7 +43,7 @@ in {
   };
 
   home = {
-    username = "cchalc";
+    username = "christopher.chalcraft";
     homeDirectory = "/Users/christopher.chalcraft";
     packages = allPackages;
     sessionVariables = {
