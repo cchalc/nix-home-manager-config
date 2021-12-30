@@ -9,6 +9,11 @@ let
 
   allPackages = externalPackages ++ customScripts;
 in {
+
+  xdg.configFile."nix/nix.conf".text = ''
+    experimental-features = nix-command flakes
+  '';
+
   nixpkgs.config = {
     allowUnfree = true;
     allowUnsupportedSystem = true;
@@ -39,7 +44,7 @@ in {
 
     tmux = import ./tmux.nix;
 
-    zsh = import ./zsh.nix { fetchFromGitHub = pkgs.fetchFromGitHub; };
+    zsh = import ./cli/zsh.nix { fetchFromGitHub = pkgs.fetchFromGitHub; };
   };
 
   home = {

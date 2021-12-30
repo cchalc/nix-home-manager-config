@@ -36,5 +36,11 @@ let
     go
     exa
     python38Full
+
+    # cli tools
+    zoxide
+    fzf
+    ripgrep
+    universal-ctags
   ];
 in homePackages ++ gitTools ++ nixTools

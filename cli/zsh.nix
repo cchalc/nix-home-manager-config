@@ -13,10 +13,19 @@
     garbage = "nix-collect-garbage";
     reload = "switch && garbage";
     we = "watchexec";
+    ll = "ls -lrat";
+
+  # Navigation;
+  ".." = "cd ..";
+  "..." = "cd ../..";
+  "...." = "cd ../../..";
+  "....." = "cd ../../../..";
+
   };
   enableAutosuggestions = true;
   enableCompletion = true;
   autocd = true;
+  history.extended = true;
   initExtra = (builtins.readFile ./init.sh);
   plugins = [
         {
