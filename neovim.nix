@@ -2,7 +2,6 @@
 
 {
   enable = true;
-  # Sets alias vim=nvim
   vimAlias = true;
 
   extraConfig = (builtins.readFile ./.vimrc);

@@ -46,23 +46,16 @@
         sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
       };
     }
-    {
-      name = "wting";
-      src = fetchFromGitHub {
-        owner = "wting";
-        repo = "autojump";
-        rev = "release-v22.5.3";
-        sha256 = "1rgpsh70manr2dydna9da4x7p8ahii7dgdgwir5fka340n1wrcws";
-      };
-    }
-    {
-      name = "macos";
-      src = fetchFromGitHub {
-        owner = "joow";
-        repo = "macos";
-        rev = "76bb298dc0ff5c5a1c640fe8f33f09c68b9af239";
-        sha256 = "13mq0dq2y7d4m5cxxj13mbplk53kgg3j3f2id89klaw28kh9jrvs";
-      };
-    }
   ];
+
+  oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" "vi-mode" ];
+  };
+
+  initExtraBeforeCompInit = ''
+    eval "$(direnv hook zsh)"
+    eval "$(zoxide init zsh)"
+    eval "$(starship init zsh)"
+  '';
 }
