@@ -1,8 +1,10 @@
-{ config, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   nigpkgsRev = "21.11-pre";
   pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${nigpkgsRev}.tar.gz") {};
+
+  vimsettings = import ./neovim.nix;
 
   externalPackages = import ./packages.nix { inherit pkgs; };
   customScripts = import ./scripts.nix { writeScriptBin = pkgs.writeScriptBin; };
@@ -30,7 +32,8 @@ in {
       path = "…";
     };
 
-    neovim = import ./neovim.nix { vimPlugins = pkgs.vimPlugins; };
+    #neovim = import ./neovim.nix { vimPlugins = pkgs.vimPlugins; };
+    neovim = vimsettings pkgs;
 
     starship = import ./starship.nix;
 
@@ -58,4 +61,7 @@ in {
   };
 
   home.stateVersion = "21.03";
+
+  home.file.".config/nvim/coc-settings.json".source = ./coc-settings.json;
+
 }

@@ -13,20 +13,22 @@ let
     cachix
     lorri
     niv
+    nix-index
+    nix-template
+    nix-update
+    nixpkgs-review
   ];
 
   homePackages = with pkgs; [
     packer
     vagrant
-    nodejs_latest
+    nodejs # for coc vim plugin
     age
     elixir
-    jq
     terraform
     doctl
     yarn
     hugo
-    bat
     httpie
     dhall
     rustup
@@ -36,11 +38,22 @@ let
     go
     exa
     python38Full
+    perl # for fzf history
 
     # cli tools
     zoxide
     fzf
     ripgrep
     universal-ctags
+    jq
+    bat
+
+    # coc lanaguages
+    rnix-lsp
+
+    #haskell dependencies
+    cabal-install
+    ghc
+    haskellPackages.hlint
   ];
 in homePackages ++ gitTools ++ nixTools
